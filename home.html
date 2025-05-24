@@ -1,0 +1,30 @@
+<section>
+  <h2>Welcome to CleanEarth</h2>
+  <p>
+    <span id="typing-text">CleanEarth is a community of volunteers...</span>
+  </p>
+  <p>
+    <button id="explore-btn">Explore Our Work</button>
+  </p>
+</section>
+
+<script>
+
+  const text =
+    "CleanEarth is a community of volunteers dedicated to protecting our planet.";
+  let i = 0;
+  const typing = () => {
+    if (i < text.length) {
+      document.getElementById("typing-text").textContent += text.charAt(i);
+      i++;
+      setTimeout(typing, 30);
+    }
+  };
+  document.getElementById("typing-text").textContent = "";
+  typing();
+
+  // Button to navigate
+  document.getElementById("explore-btn").addEventListener("click", () => {
+    document.querySelector('a[data-page="activities"]').click();
+  });
+</script>

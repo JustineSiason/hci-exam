@@ -1,0 +1,22 @@
+<p>
+  Name:<br />
+  <input type="text" name="name" required maxlength="50" oninput="updateCounter()" />
+  <small><span id="char-count">0</span>/50</small>
+</p>
+
+<script>
+  function updateCounter() {
+    const input = document.querySelector('input[name="name"]');
+    document.getElementById("char-count").textContent = input.value.length;
+  }
+
+  const joinForm = document.getElementById("join-form");
+  if (joinForm) {
+    joinForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Thank you for joining! We'll be in touch soon.");
+      joinForm.reset();
+      updateCounter();
+    });
+  }
+</script>

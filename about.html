@@ -1,0 +1,37 @@
+<section>
+  <h2>Our Mission</h2>
+  <p>
+    We aim to inspire environmental action through community-led initiatives.
+  </p>
+</section>
+
+<section>
+  <h2>Our Team</h2>
+  <ul>
+    <li>
+      <strong>Manteshwar Boparai</strong> - Coordinator
+      <button class="bio-toggle">Show Bio</button>
+      <p class="bio" hidden>
+        Mantesh has led over 50 eco-projects in urban areas since 2020.
+      </p>
+    </li>
+    <li>
+      <strong>Ais Pacheco</strong> - Outreach Lead
+      <button class="bio-toggle">Show Bio</button>
+      <p class="bio" hidden>
+        Ais runs educational workshops for schools and local youth groups.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<script>
+  document.querySelectorAll(".bio-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const bio = btn.nextElementSibling;
+      const isHidden = bio.hasAttribute("hidden");
+      bio.toggleAttribute("hidden");
+      btn.textContent = isHidden ? "Hide Bio" : "Show Bio";
+    });
+  });
+</script>
